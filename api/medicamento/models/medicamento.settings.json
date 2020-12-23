@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicamentos",
+  "info": {
+    "name": "Medicamento"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "laboratorio": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "pmc": {
+      "type": "float",
+      "required": true
+    },
+    "codBarras": {
+      "type": "biginteger",
+      "required": true
+    },
+    "linkBula": {
+      "type": "string"
+    },
+    "classificacao": {
+      "type": "string"
+    },
+    "imgMedicamento": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categoria": {
+      "model": "categoria",
+      "via": "medicamentos"
+    }
+  }
+}

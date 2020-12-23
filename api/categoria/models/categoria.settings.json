@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorias",
+  "info": {
+    "name": "Categoria"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "NomeCategoria": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "percentualDesconto": {
+      "type": "float",
+      "unique": true,
+      "required": true
+    },
+    "medicamentos": {
+      "via": "categoria",
+      "collection": "medicamento"
+    }
+  }
+}
